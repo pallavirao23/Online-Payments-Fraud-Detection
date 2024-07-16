@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - OPF</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div id="background"></div>
+    <div id="container">
+        <h1 id="head">Online Payments Fraud Detection</h1>
+        <p>The objective of online payments fraud detection is to identify and 
+            prevent fraudulent transactions in real-time or as quickly as possible 
+            to minimize financial losses, protect consumers, and maintain the integrity
+            and trust of the payment system.</p>
+    </div>
+
+    <div id="buttons">
+        <a href="{{ url_for('predict') }}"><button type="button">PREDICT</button></a>
+    </div>
+     <div class="marquee-container">
+        <marquee>Stay Alert! Protect Your Transactions from Fraudulent Activities.</marquee>
+    </div>
+</body>
+</html>

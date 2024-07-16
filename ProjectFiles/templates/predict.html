@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predict - OPF</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='predict-style.css') }}"> 
+</head>
+<body class="predict-page">
+    <div id="background"></div>
+    <div id="container">
+        <h1 id="head">Enter Transaction Details</h1>
+        <form id="predictionForm" action="{{ url_for('predict') }}" method="POST">
+            <div class="form-group">
+                <div class="input-container">
+                    <label for="step">Step:</label>
+                    <input type="number" id="step" name="step" placeholder="Step: represents a unit of time where" required>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <div class="input-container">
+                    <label for="type">Type:</label>
+                    <input type="number" id="type" name="type" placeholder="Type of transaction" required>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <div class="input-container">
+                    <label for="amount">Amount:</label>
+                    <input type="number" id="amount" name="amount"  placeholder="The amount of transaction" step="any" required>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <div class="input-container">
+                    <label for="oldbalanceorg">OldbalanceOrg:</label>
+                    <input type="number" id="oldbalanceorg" name="oldbalanceorg" placeholder="Balance before the transaction" step="any" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="input-container">
+                    <label for="newbalanceorig">NewbalanceOrig:</label>
+                    <input type="number" id="newbalanceorig" name="newbalanceorig" placeholder="Balance after the transaction" step="any" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="input-container">
+                    <label for="oldbalancedest">OldbalanceDest:</label>
+                    <input type="number" id="oldbalancedest" name="oldbalancedest" placeholder="Initial balance of recipient" step="any" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="input-container">
+                    <label for="newbalancedest">NewbalanceDest:</label>
+                    <input type="number" id="newbalancedest" name="newbalancedest" placeholder="The new balance of the recipient" step="any" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <button type="submit">PREDICT</button>
+            </div>
+        </form>
+    </div>
+    <div id="buttons">
+        <a href="{{ url_for('home') }}"><button type="button">HOME</button></a>
+    </div>
+    <div class="marquee-container">
+        <marquee>Warning! Enter the details correctly.</marquee>
+    </div>
+</body>
+</html>
